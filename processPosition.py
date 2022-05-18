@@ -110,7 +110,9 @@ for s in datasets:
     plt.scatter(position['x'].restrict(fwd), position['z'].restrict(fwd), zorder = 2)
     # plt.scatter(position['x'].restrict(rev), position['z'].restrict(rev), zorder = 2)
     plt.gca().add_patch(circle1)
-       
+    
+    fwd.to_csv(path + '/' + name + '_vte.csv', index=False) 
+    
     fwd = (fwd - wake_ep.iloc[1]['start']) / 1e6
     # rev = (rev - wake_ep.iloc[1]['start']) / 1e6
     
