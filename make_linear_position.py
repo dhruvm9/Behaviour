@@ -79,7 +79,7 @@ for s in datasets:
     arm_length = max(arm_length)
     c_dist = c_dist / arm_length
     
-    c_dist = scipy.ndimage.gaussian_filter(c_dist, 10)
+    # c_dist = scipy.ndimage.gaussian_filter(c_dist, 10)
     c_dist = c_dist[0]
     
     # When is the animal on the left or right  arm?

@@ -96,11 +96,11 @@ for s in datasets:
                       # if (stvals[i] > 0 and evals[i] < 0) :
                         tokeep.append(i)
                        
-                # plt.figure()
-                # plt.plot(r1['dy'],'o-')
-                # plt.plot(start[tokeep], stvals[tokeep], "x")
-                # plt.plot(end[tokeep], evals[tokeep], "*")
-                # plt.show()
+                plt.figure()
+                plt.plot(r1['dy'],'o-')
+                plt.plot(start[tokeep], stvals[tokeep], "x")
+                plt.plot(end[tokeep], evals[tokeep], "*")
+                plt.show()
                 
     fwd = nts.IntervalSet(start = start[tokeep], end = end[tokeep])
     # rev = nts.IntervalSet(start = start[tokeep], end = end[tokeep])    
@@ -111,12 +111,12 @@ for s in datasets:
     # plt.scatter(position['x'].restrict(rev), position['z'].restrict(rev), zorder = 2)
     plt.gca().add_patch(circle1)
     
-    fwd.to_csv(path + '/' + name + '_vte.csv', index=False) 
+    # fwd.to_csv(path + '/' + name + '_vte.csv', index=False) 
     
     fwd = (fwd - wake_ep.iloc[1]['start']) / 1e6
     # rev = (rev - wake_ep.iloc[1]['start']) / 1e6
     
-    fwd.to_csv(path + '/' + name + '_fwd.csv', index=False)    
+    # fwd.to_csv(path + '/' + name + '_fwd.csv', index=False)    
     # rev.to_csv(path + '/' + name + '_rev.csv', index=False)
            
                
